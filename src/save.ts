@@ -53,7 +53,7 @@ async function run() {
         const tarPath = await io.which("tar", true);
         core.debug(`Tar Path: ${tarPath}`);
         await exec(`"${tarPath}"`, args);
-        
+
         // https://help.github.com/en/actions/automating-your-workflow-with-github-actions/caching-dependencies-to-speed-up-workflows#usage-limits-and-eviction-policy
         const fileSizeLimit = 5 * 1024 * 1024 * 1024; // 5GB
         const archiveFileSize = fs.statSync(archivePath).size;
