@@ -60,10 +60,8 @@ async function run() {
         core.debug(`File Size: ${archiveFileSize}`);
         if (archiveFileSize > fileSizeLimit) {
             core.warning(
-                `Cache size of ${archiveFileSize} bytes is over the 400MB limit, not saving cache.`
                 `Cache size of ${archiveFileSize} bytes is over the 5GB limit. GitHub will begin evicting caches until the total size is less than 5 GB.`
             );
-            return;
         }
 
         const stream = fs.createReadStream(archivePath);
